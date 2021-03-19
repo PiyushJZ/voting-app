@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{%block content %}
+
+    <h1>Login Here</h1>
+    <form name="login_form" method="POST">
+        <label for="email">E-Mail</label>
+        <input type="email" name="email" class="field" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" class="field" required>
+
+        <input type="radio" name="admin" value="Admin" class="field"> Admin
+
+        <p class="error error--hidden"></p>
+        
+        <input type="submit" value="Log In" class="btn">
+    </form>
+
+{% endblock %}

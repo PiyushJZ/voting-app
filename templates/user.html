@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{%block content %}
+
+    <h1>Welcome</h1>
+    <h3>Cast Your Vote Here</h3>
+    <form name="vote_form" method="POST">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Candidate Name</th>
+                    <th scope="col">Voting Control</th>
+                </tr>
+            </tread>
+            <tbody>
+                {% for candidate in cand %}
+                <tr>
+                    <td>{{candidate}}</td>
+                    <td>
+                        <input type="radio" name="vote" id="{{candidate}}">
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <p class="error error--hidden"></p>
+        <br>
+        <input type="submit" value="Submit Vote">
+    </form>
+    
+
+{% endblock %}

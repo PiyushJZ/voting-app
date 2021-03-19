@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{%block content %}
+
+    <h1>Admin Page</h1>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Candidate Name</th>
+                    <th scope="col">Total Votes</th>
+                </tr>
+            </tread>
+            <tbody>
+                {% for candidate in cand %}
+                <tr>
+                    <td>{{candidate.name}}</td>
+                    <td>{{candidate.vote}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <form name="logout_form">
+        <input type="submit" value="Logout">
+    </form>
+
+{% endblock %}
